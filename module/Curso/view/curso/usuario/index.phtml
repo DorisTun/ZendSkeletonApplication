@@ -1,0 +1,37 @@
+<?php
+
+$title = 'Usuario';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+<p>
+    <a href="/usuario/add">Agregar un nuevo usuario</a>
+</p>
+<div class="panel panel-info">
+<table class="table table-bordered">
+
+        
+<tr>
+
+    <th class="danger">Clave</th>
+    <th class="danger">Nombre</th>
+    <th class="danger">Calificaciones</th>
+    <th class="danger">Opciones&nbsp;</th>
+    
+</tr>
+
+<?php foreach ($this->all as $usuario) : ?>
+<tr>
+    <td><?php echo $this->escapeHtml($usuario['clave']);?></td>
+    <td><?php echo $this->escapeHtml($usuario['nombre']);?></td>
+    <td><?php echo $this->escapeHtml($usuario['calificaciones']);?></td>
+    <td>
+    <a href="/usuario/edit/<?php echo $usuario['clave'];?>">Editar</a>
+    <a href="/usuario/delete/<?php echo $usuario['clave'];?>">Borrar</a>
+    
+    </td>
+</tr>
+
+<?php endforeach; ?>
+</table>
+</div>

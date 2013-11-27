@@ -1,0 +1,17 @@
+<?php
+
+print_r($this->delete);
+?>
+<?php if($this->delete==1):
+echo'
+<div class="alert alert-success">
+        <strong>Exito!!</strong>  se a eliminado al usuario.
+      </div>';
+
+endif;
+if ($this->delete==0):
+echo '<div class="alert alert-danger">
+        <strong>Oh snap!</strong> no se pudo eliminar al usuario.
+      </div>';
+endif;
+      ?>
